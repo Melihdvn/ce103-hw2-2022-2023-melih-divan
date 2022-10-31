@@ -198,8 +198,7 @@ char* ce103_strrev(char* fiStr)
 **/
 int ce103_strlen(const char* fiStr)
 {
-	//TODO:Start from Here...
-	return -1;
+	strlen(fiStr);
 }
 
 /**
