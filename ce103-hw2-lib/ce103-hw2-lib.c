@@ -174,8 +174,7 @@ int ce103_fibonacciNumber(int fiIndex)
 **/
 char* ce103_strrev(char* fiStr)
 {
-	//TODO:Start from Here...
-	return -1;
+	strrev(fiStr);
 }
 
 /**
