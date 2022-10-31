@@ -327,6 +327,13 @@ void ce103_bin2hex(unsigned char* fiBin, int fiBinLen, char* foHex)
 */
 int ce103_gcd(int fiNum1, int fiNum2)
 {
-	//TODO:Start from Here...
-	return -1;
+	while (fiNum1 != fiNum2)
+	{
+		if (fiNum1 > fiNum2)
+			fiNum1 -= fiNum2;
+		else
+			fiNum2 -= fiNum1;
+	}
+
+	return fiNum1;
 }
