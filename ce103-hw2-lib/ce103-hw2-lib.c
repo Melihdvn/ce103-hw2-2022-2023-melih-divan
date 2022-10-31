@@ -223,8 +223,7 @@ int ce103_strlen(const char* fiStr)
 **/
 char* ce103_strcat(char* fiDest, char* fiSrc)
 {
-	//TODO:Start from Here...
-	return 0;
+	strcat(fiDest, fiSrc);
 }
 
 /**
