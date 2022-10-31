@@ -274,8 +274,7 @@ int ce103_strcmp(const char* fiLhs, const char* fiRhs)
 **/
 char* ce103_strcpy(char* foDestination, const char* fiSource)
 {
-	//TODO:Start from Here...
-	return 0;
+	strcpy(foDestination, fiSource);
 }
 
 /**
