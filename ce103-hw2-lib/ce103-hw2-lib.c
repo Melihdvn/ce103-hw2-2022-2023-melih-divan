@@ -249,8 +249,7 @@ char* ce103_strcat(char* fiDest, char* fiSrc)
 **/
 int ce103_strcmp(const char* fiLhs, const char* fiRhs)
 {
-	//TODO:Start from Here...
-	return -2;
+	strcmp(fiLhs, fiRhs);
 }
 
 /**
