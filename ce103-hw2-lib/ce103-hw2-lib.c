@@ -172,34 +172,9 @@ int ce103_fibonacciNumber(int fiIndex)
 **/
 char* ce103_strrev(char* fiStr)
 {
-	// declare variable  
-	int i, len, temp;
-	len = strlen(fiStr); // using strlen and getting length of string
-
-	// using for loop to iterate the string   
-	for (i = 0; i < len / 2; i++)
-	{
-		// temp variable
-		temp = fiStr[i];
-		fiStr[i] = fiStr[len - i - 1];
-		fiStr[len - i - 1] = temp;
-	}
+	//TODO:Start from Here...
+	return -1;
 }
-
-int main()
-{
-	char str[50]; 
-	printf(" Enter the string: ");
-	gets(str); // use gets() function to take string  
-
-	printf(" \n Before reversing the string: %s \n", str);
-
-	// call ce103_strrev() function   
-	ce103_strrev(str);
-	printf(" After reversing the string: %s", str);
-
-		return 0;
-	}
 
 /**
 	@name   strlen (ce103_strlen)
