@@ -145,20 +145,22 @@ int fnCE103HW2Lib(unsigned char* fia, int fib, char* fic)
 *	  @retval [\b int] calculated fibonacci number
 **/
 int ce103_fibonacciNumber(int fiIndex)
-	{
-		if (fiIndex <= 1)
-			return fiIndex;
-		return ce103_fibonacciNumber(fiIndex - 1) + ce103_fibonacciNumber(fiIndex - 2);
+{
+	int fiIndexp = fiIndex - 1;
+	if (fiIndexp <= 1) {
+		return fiIndexp;
 	}
 
-	int main()
+	int previousFib = 0, currentFib = 1;
+	for (int i = 0; i < fiIndexp - 1; i++)
 	{
-		int fiIndex = 9;
-		printf("%d", ce103_fibonacciNumber(fiIndex));
-		getchar();
-		return -1;
+		int newFib = previousFib + currentFib;
+		previousFib = currentFib;
+		currentFib = newFib;
 	}
 
+	return currentFib;
+ }
 /**
 	@name   strrev (ce103_strrev)
 
