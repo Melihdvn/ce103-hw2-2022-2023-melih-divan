@@ -275,7 +275,26 @@ char* ce103_strcat(char* fiDest, char* fiSrc)
 **/
 int ce103_strcmp(const char* fiLhs, const char* fiRhs)
 {
-	strcmp(fiLhs, fiRhs);
+    int i;
+    for (i = 0; fiLhs[i] && fiRhs[i]; ++i)
+    {
+        /* If characters are same or inverting the
+           6th bit makes them same */
+        if (fiLhs[i] == fiRhs[i] || (fiLhs[i] ^ 32) == fiRhs[i])
+           continue;
+        else
+           break;
+    }
+ 
+    /* Compare the last (or first mismatching in
+       case of not same) characters */
+    if (fiLhs[i] == fiRhs[i])
+        return 0;
+ 
+    // Set the 6th bit in both, then compare
+    if ((fiLhs[i] | 32) < (fiRhs[i] | 32))
+        return -1;
+    return 1;
 }
 
 /**
