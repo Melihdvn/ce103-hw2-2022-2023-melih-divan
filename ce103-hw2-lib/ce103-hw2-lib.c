@@ -244,7 +244,12 @@ int ce103_strlen(const char* fiStr)
 **/
 char* ce103_strcat(char* fiDest, char* fiSrc)
 {
-	strcat(fiDest, fiSrc);
+	char* rfiDest = fiDest;
+
+	while (*fiDest)
+		fiDest++;
+	while (*fiDest++ = *fiSrc++);
+	return rfiDest;
 }
 
 /**
