@@ -174,7 +174,22 @@ int ce103_fibonacciNumber(int fiIndex)
 **/
 char* ce103_strrev(char* fiStr)
 {
-	strrev(fiStr);
+	int i;
+	int len = 0;
+	char c;
+	if (!fiStr)
+		return 0;
+	while (fiStr[len] != '\0')
+	{
+		len++;
+	}
+	for (i = 0; i < (len / 2); i++)
+	{
+		c = fiStr[i];
+		fiStr[i] = fiStr[len - i - 1];
+		fiStr[len - i - 1] = c;
+	}
+	return fiStr;
 }
 
 /**
