@@ -319,7 +319,13 @@ int ce103_strcmp(const char* fiLhs, const char* fiRhs)
 **/
 char* ce103_strcpy(char* foDestination, const char* fiSource)
 {
-	strcpy(foDestination, fiSource);
+	char* saved = foDestination;
+	while (*fiSource)
+	{
+		*foDestination++ = *fiSource++;
+	}
+	*foDestination = 0;
+	return saved;
 }
 
 /**
