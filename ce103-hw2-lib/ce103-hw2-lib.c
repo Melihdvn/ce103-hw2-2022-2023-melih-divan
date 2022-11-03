@@ -343,7 +343,29 @@ char* ce103_strcpy(char* foDestination, const char* fiSource)
  */
 void ce103_hex2bin(char* fiHex, int fiHexLen, unsigned char* foBin)
 {
-	//TODO:Start from Here...
+	int c, d;                                                 // Two integer values are defined, named c and d. 
+	for (;;)
+	{
+		c = *fiHex++; if (c == 0) break;                      // Here we match our input to c.
+
+		if (c > 96) c -= 87;								  // If it's a uppercase letter we will substract 87 (A is starting from 96 in ascii)
+
+		else if (c > 64) c -= 55;							  // If it's a lowercase letter we will substract 55 (a is starting from 64 in ascii)
+
+		else c -= 48;                                         // If it's a number we will substract 48 (Numbers are starting from 48 in ascii)
+
+		d = *fiHex++; if (d == 0) { *foBin = c << 4; break; } // Here we take our second input until it overs. 
+
+
+		if (d > 96) d -= 87;                                  // Same operations
+
+		else if (d > 64) d -= 55;
+
+		else d -= 48;
+
+		*foBin++ = (c << 4) | d;                              // foBin is set to c shifted 1 byte to left and d added to the end.
+	}
+	return fiHex;                                             // Return the fiHex value.
 }
 
 /**
